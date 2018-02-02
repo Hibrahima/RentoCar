@@ -1,0 +1,610 @@
+	<html>
+
+
+
+	<!--  SCRIPT FUNCTION DROPDOWN DEPENDENT	-->
+
+	<script>
+
+	
+	</script>
+	
+	<head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+	  	<link rel="stylesheet" href ="css\bootstrap.min.css"/>
+	  	<link rel="stylesheet" href="font-awesome\css\font-awesome.min.css"/>
+
+		<title>RENT A CAR</title>
+		<link rel="stylesheet" href="style.css"/>
+		<link rel="shortcut icon" href ="images/logo.jpeg" type="image/extensión" />
+
+	</head>
+
+	<body> 
+
+	<!-- HEADER   -->
+		<header>
+			<div class="logo" style="text-align: center">
+					<a href="api"><img src="images/logoweb.png" alt="logo" width="500px" height="180px"></a>
+				</div>
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+	   				<h5></h5>
+	  			</div>
+	 
+	  <div class="collapse navbar-collapse navbar-ex1-collapse">
+	    <ul class="nav navbar-nav">
+	      <li><a href="#" onclick="reserveCars()">Find your car</a></li>
+
+	      
+	        <li class="dropdown">
+	        
+	  		<a href="#"  class="dropdown-toggle" data-toggle="dropdown"> About us <b class="caret"></b></a>
+	  			<ul class="dropdown-menu">
+					<li><a href="#ventana2" data-toggle="modal" onclick="historyShow()" >History</a></li>
+					<li><a href="#" onclick="contactShow()">Contact us</a></li>
+	  			</ul>
+	      </li>
+
+
+			<li class="dropdown">
+
+				<a href="#"  class="dropdown-toggle" data-toggle="dropdown" id="manage_reservation_menu"> Manage Reservations <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#" onclick='getSimpleUserReservations("update")'>Update reservations</a></li>
+					<li><a href="#" onclick='getSimpleUserReservations("delete")'>Delete a reservation</a></li>
+				</ul>
+			</li>
+
+
+
+			<li class="dropdown">
+
+				<a href="#newCar"  class="dropdown-toggle" id="newcar"  data-toggle="dropdown"> Manage Cars <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#" onclick='admin()'>Add </a></li>
+					<li><a href="#" onclick='getCars()'>Update</a></li>
+                    <li><a href="#" onclick='deleteCars()'>Delete</a></li>
+				</ul>
+			</li>
+
+
+
+	   	</ul>
+
+
+		  <ul class="nav navbar-nav navbar-right">
+			  <li>
+
+				<a href="#ventana1" data-toggle="modal" id="login_menu">Log in</a>
+			  <div class="modal fade" id="ventana1" >
+			  <div class="modal-dialog modal-lg">
+				  <div id="form" class="modal-content" >
+
+				  	
+						  <div class="modal-header" >
+
+							  <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+						  </button>
+							  <h2 class=".glyphicon .glyphicon-wrench" id="titlelogin">DO YOU WANT TO BE PART OF THE FAMILY?</h2>
+
+
+
+					  <div class="modal-body">
+
+
+						  <div class="col-md-4">
+						  <div class="wrapper">
+							  <form class="form-signin" id="user_login_form">
+								  <h2 class="form-signin-heading" id="login">PLEASE LOGIN</h2>
+
+
+
+								  <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" id="login_email"/>
+
+								  <input type="password" class="form-control" name="password" placeholder="Password" required="" id="login_password"/>
+								  <label class="checkbox">
+								
+									<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+								  </label>
+								  <button class="btn btn-lg btn-warning btn-block" type="submit">Login</button>
+							  </form>
+						  </div>
+						  </div>
+
+						  <div class="col-md-8">
+							  <div class="wrapper">
+							  <form class="form-signin" id="user_registration_form">
+								  <h2 class="form-signin-heading" id="register">PLEASE REGISTER</h2>
+
+								 <div class="form-row">
+
+								  <div class="form-group col-md-6">
+								  	<label for="fecha">Name</label>
+								  <input type="text"  class="form-control" name="Name" placeholder="Name" required="" id="user_name"/>
+								</div>
+								 
+								  <div class="form-group col-md-6">
+								  	 <label for="fecha">Surname</label>
+								  <input type="text" class="form-control" name="Surname" placeholder="Surname" required="" id="user_surname"/>
+								  </div>
+
+								  </div>
+								  
+								 
+
+								  
+								  <div class="form-group row">
+								  	<label for="fecha" class="col-md-3 col-form-label">Date</label>
+								  	<div class="col-md-9">
+								  		<!--FECHA CAMBIADA ID-->
+									  <input type="date" name="date" id="user_birthday"/></div>
+									</div>
+								  <div class="form-group row">
+								  <label for="inputEmail3" class="col-md-3 col-form-label">Email</label>
+								  <div class="col-md-9">
+								  	<!--ID EMAIL CAMBIADO-->
+								  <input type="text" class="form-control " name="username" placeholder="Email Address" required="" autofocus="" id="user_email" />
+								</div>
+								</div>
+
+								<div class="form-group row">
+									<label for="password" class="col-md-3 col-form-label">Password</label>
+									<div class="col-md-9">
+										<!-- cambiado id-->
+								  <input type="password" class="form-control" name="password" placeholder="Password" required="" id="user_password"/>
+								  </div>
+								</div>
+
+								<div class="form-group row">
+									<label for="licence" class="col-md-3 col-form-label">Driving licence</label>
+								  	<div class="col-md-9">
+								<div class="form-group">
+								  <input type="number" class="form-control" name="Driving licence" placeholder="Driving licence number" required="" id="user_driving_licence"/>
+
+								</div>
+							</div>
+								   
+
+								  <div class="form-group row">
+								  	<label for="Address" class="col-md-3 col-form-label">Address</label>
+								  	<div class="col-md-9">
+								  		<!-- cambiado id-->
+								  <input type="text" class="form-control" name="Address" placeholder="Address" required="" id="user_address"/>
+								</div>
+								  </div>
+
+								
+								<div class="form-row">
+									
+								  <div class="form-group col-md-6">
+								  	<label for="City">City</label>
+								
+								  <input type="text" class="form-control" name="City" placeholder="City" required="" id="user_city"/>
+								 </div>
+
+								 <div class="form-group col-md-6">
+								 	<label for="ZIP">ZIP</label>
+								  <input type="text" class="form-control" name="zip" placeholder="ZIP" required="" id="user_zip"/>
+								 </div>
+
+								</div>
+
+								
+								
+								
+								
+
+								<div class="form-group row">
+									<label for="Country" class="col-md-3 col-form-label">Country</label>
+								  	<div class="col-md-9">
+								
+								  <select name="Select country" id="Country">
+									  <option value="Spain">Spain</option>
+									  <option value="Germanu">Germany</option>
+									  <option value="Canada">Canada</option>
+									  <option value="Cyprus">Cyprus</option>
+									  <option value="Chine">China</option>
+
+								  </select>
+
+								</div>
+							</div>
+
+
+
+				<div class="panel panel-default credit-card-box">
+	                <div class="panel-heading display-table" >
+	                    <div class="row display-tr" >
+	                        <h3 class="panel-title display-td" >Payment Details</h3>
+	                        <div class="display-td" >                            
+	                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+	                        </div>
+	                    </div>                    
+	                </div>
+	                <div class="panel-body">
+	                    <form role="form" id="payment-form">
+	                        <div class="row">
+	                            <div class="col-xs-12">
+	                                <div class="form-group">
+	                                    <label for="cardNumber">CARD NUMBER</label>
+	                                    <div class="input-group">
+	                                        <input 
+	                                            type="number"
+	                                            class="form-control"
+	                                            name="cardNumber"
+	                                            placeholder="Valid Card Number"
+	                                            autocomplete="cc-number"
+	                                            required autofocus 
+	                                            id="user_card_number"
+	                                        />
+	                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+	                                    </div>
+	                                </div>                            
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                            <div class="col-xs-7 col-md-7">
+	                                <div class="form-group">
+	                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+	                                    <input 
+	                                        type="text" 
+	                                        class="form-control" 
+	                                        name="cardExpiry"
+	                                        placeholder="MM / YY"
+	                                        autocomplete="cc-exp"
+	                                        required 
+	                                        id="user_card_expiration_date"
+	                                    />
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-5 col-md-5 pull-right">
+	                                <div class="form-group">
+	                                    <label for="cardCVC">CV CODE</label>
+	                                    <input 
+	                                        type="number" 
+	                                        class="form-control"
+	                                        name="cardCVC"
+	                                        placeholder="CVC"
+	                                        autocomplete="cc-csc"
+	                                        required
+	                                        id="user_card_cv_code"
+	                                    />
+	                                </div>
+	                            </div>
+	                        </div>
+	                        
+	                        <!--<div class="row" style="display:none;">
+	                            <div class="col-xs-12">
+	                                <p class="payment-errors"></p>
+	                            </div>
+	                        </div>-->
+	                    </form>
+	                </div>
+	            </div>    
+
+
+								  <button class="btn btn-lg btn-warning btn-block" type="submit">Register</button>
+							  </form>
+
+
+						  </div>
+						  </div>
+					  </div>
+					  </div>
+					  </div>
+				  </div>
+			  </div>
+			  </li>
+
+			  <li>
+			  	<a href="#" id ="logout_menu"> Logout </a>
+			  </li>
+		  </ul>
+
+	     </div>
+	   </nav>
+	       </header>
+
+		<!-- CHANGING ZONE   content -->
+	            <div id="content">
+	                    <br>
+	                    <h3 id="dynamic_content_h3">Welcome to our page</h3>
+	                    <br>
+	            </div>
+	    <!-- Fin content -->
+
+
+	    <!--    FOOTER   -->
+
+<footer id="footer">
+       <section class="index-link">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="link-area">
+                    <h3>FIND US</h3>
+                    <ul>
+						<li>Sunlight, 6 Hardman St, Manchester.</li>
+						<li>Tlf: +34 654876544 </li>
+                	</ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="link-area">
+                    <h3>CONTACT</h3>
+                    <ul>
+                    <li>Martin.Romero_costa@Student.de</li>
+                    <li>haidara99@gmail.com</li>
+                    <li>coralrb9722@gmail.com</a></li>
+						<li>miriam101@hotmail.es</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="link-area">
+                    <h3>TERMS & CONDITIONS</h3>
+                    <ul>
+                    <li><a href="#" onclick="termsAndConditions()">Terms and conditions</a></li>
+                    <li><a href="#" onclick="privacyPolicy()">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="index-social">
+    <div class="container">
+    <div class="row index-social-link text-center">
+            <p class="copy-c">RENT A CAR 2017 @copyright</p>
+        </div>
+        </div>
+</section>
+</footer>
+
+
+
+	<!--		SCRIPT BUTTONS      -->
+
+	
+
+
+	<!--		NEW CAR FORM 		-->
+
+	<div id="admin1">
+
+	<div class="section-content">
+		<h1  class="section-header">Add a <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">New Car</span></h1>
+
+	</div>
+	<div class="add-section">
+		<div class="container">
+			<form id="add_car_form" onsubmit="abcds()">
+
+				<!--1º COLUMNA-->
+
+				<div class="col-md-6 form-line">
+					<div class="row">
+
+						<div class="col-md-6">
+							<label for="car_bran">Brand</label>
+						</div>
+						<div class="col-md-6">
+						
+						<div class="form-group">
+						
+						<select class= "btn" name="Select Brand" id="car_brand" onchange="populate();">
+							<option value="" selected disabled hidden>Choose here</option>
+							<option value="BMW">BMW</option>
+							<option value="Audi">Audi</option>
+							<option value="Ford">Ford</option>
+							<option value="Fiat">Fiat</option>
+							<option value="Kia">Kia</option>
+
+						</select>
+
+
+						</div>
+
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<label for="car_model">Model</label>
+						</div>
+						<div class="col-md-6">
+							<select class="btn" name="Select Model" id="car_model">
+
+							</select>
+						
+						
+
+					</div>
+					
+					</div>
+
+					
+					<div class="row">
+						<div class="col-md-6">
+							<label for ="car_fuel">Fuel</label>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+						
+						<!--<div class="form-group">-->
+							
+							<select class= "btn" name="Select Fuel" id="car_fuel">
+								<option value="fuel">Fuel</option>
+								<option value="diesel">Diesel</option>
+
+							</select>
+						</div>
+						</div>
+					</div>
+
+					
+
+					<div class="row">
+						<div class="col-md-6">
+							<label for="car_price">Price</label>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+						
+						<input type="number" class="btn form-control" id="car_price" placeholder="Enter Price">
+					</div>
+						</div>
+
+					</div>
+
+				
+
+
+				</div>
+				<div class="col-md-6">
+
+					<div class="row">
+						<div class="col-md-6">
+							<label for ="car_gear">Gear Box</label>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+						
+						<select class= "btn" name="Select Gear" id="car_gear">
+							<option value="automatic">Automatic</option>
+							<option value="manual">Manual</option>
+
+						</select>
+					</div>
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<label for ="car_places">Seats</label>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+						
+						<select class= "btn" name="Select Places" id="car_places">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+
+						</select>
+					</div>
+
+						</div>
+
+					</div>
+						<div class="row">
+						<div class="col-md-6">
+							<label for="car_image" size=60 name="file1">Image</label>
+						</div>
+						<div class="col-md-6">
+							<!--<div class="form-inline">-->
+						<div class="form-group">
+							
+							<input type="file" class="btn form-control" id="car_image" placeholder="Enter Price">
+						</div>
+						<!--<input type=submit value="upload" id="upload_image"><br> -->
+					<!--</div>-->
+					<div>
+						 <button class="btn btn-lg btn-warning btn-block" type="button" id="add_car_button" onclick="getCarDataAndSendToServer();">Add</button>
+					</div>
+
+					<div class="row">
+						<label >    </label>
+					</div>
+						</div>
+
+
+					</div>
+
+
+					</div>
+					
+
+					
+					
+					
+
+					
+				</div>
+			</form>
+		</div>
+
+</div>
+</div>
+
+  
+	<!--		SERVER 		-->
+
+
+	
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/bootstrap-3.3.7.js"></script>
+	<script src="js/notify.js"></script>
+	<script type="text/javascript" src="js/_user.js"></script>
+	<script type="text/javascript" src="js/_car.js"></script>
+	<script type="text/javascript" src="js/_reservation.js"></script>
+	<script src="js/buttons.js"></script>
+
+	<script type="text/javascript">
+	   	$(document).ready(function(){
+
+	   		//Hiding menus
+	   		var userType = getCookieByName("user type");
+	   		if(!userType || userType === ''){
+	   			$("#manage_reservation_menu").hide();
+	   			$("#newcar").hide();
+	   			$("#logout_menu").hide();
+
+	   		}
+	   		else{
+	   			$("#login_menu").hide();
+	   			if(userType == "admin"){
+	   				$("#manage_reservation_menu").show();
+	   				$("#newcar").show();
+	   			}
+	   			else if(userType == "user"){
+	   				$("#manage_reservation_menu").show();
+	   				$("#newcar").hide();
+	   			}
+	   		}
+
+	   		//Registration form
+	   		var userRegistrationForm = $("#user_registration_form");
+			userRegistrationForm.submit(function(event){
+				event.preventDefault();
+				getUserDataAndSendToServer(); // From _user.js
+			});
+
+
+			//Login form
+			var userLoginForm = $("#user_login_form");
+			userLoginForm.submit(function(event){
+				event.preventDefault();
+				var credentials = {
+					email: $("#login_email").val(),
+					password: $("#login_password").val()
+				};
+
+				login(credentials); // From _user.js
+			});
+			
+		})
+		
+
+    </script>	
+
+	 
+	   </body>
+	   </html>

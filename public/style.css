@@ -1,0 +1,294 @@
+
+.content-header{
+  font-family: 'Oleo Script', cursive;
+  color:#fcc500;
+  font-size: 45px;
+}
+
+.section-content{
+  text-align: center; 
+
+}
+#contactUsButton{
+
+    align: center;
+    width: 25%;
+    display:block; /*I have used these two sentences for moving to the center of the web page this section*/
+    margin:0 auto;
+}
+
+
+#fname{
+    align: center;
+    width: 25%;
+    display:block; /*I have used these two sentences for moving to the center of the web page this section*/
+    margin:0 auto;
+
+}
+
+#titleHistory{
+    font-family: "Apple Chancery";
+    align: center;
+    width:  80%;
+    display:block;
+    margin:0 auto;
+    margin-top: 10px;
+}
+
+#bodyHistory{
+    font-family: "Arial Narrow";
+    align: center;
+    width: 80%;
+    display:block;
+    margin:0 auto;
+    margin-bottom: 10px;
+}
+
+
+header{
+    margin-right: 5%;
+    margin-left: 5%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+header ul li{
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    padding: 10px;
+    font-weight:bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+header ul li:hover{
+    background-color: rgba(242, 242, 242, 0.8);
+    color:black;
+}
+
+#form {
+    background: url(images/Road.jpg) no-repeat center fixed;
+}
+
+#admin1{
+    visibility: hidden;
+}
+
+body{
+    background: url(images/background.jpeg) no-repeat center fixed;
+    background-size:cover;
+    background-position: center;
+    
+}
+
+.body-content{
+    width: 90%;
+    float:left;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+#titlelogin{
+    font-family:"Arial Rounded MT Bold";
+}
+
+#find{
+    font-family: Chalkduster;
+}
+
+#content{
+    float:left;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+
+}
+
+#login{
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    opacity: 0.5;
+    font-size: 25px; 
+}
+#register{
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    opacity: 0.5;
+    font-size: 25px; 
+}
+
+#content h3{
+    text-align: center;
+}
+
+footer
+{
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+    position: fixed;
+    height: 25%;
+}
+
+
+.wrapper {
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+}
+
+.form-signin {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.form-signin-heading{
+    font-family: Copperplate Gothic Light, sans-serif;
+}
+.checkbox {
+    margin-bottom: 30px;
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+.checkbox {
+    font-weight: normal;
+}
+
+.form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+@include box-sizing(border-box);
+}
+
+
+input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+body {
+  padding-top:10em;
+}
+.index-social{
+    background-color:#2c2c2c;
+    color:#fff;
+}
+.link-area P{
+
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:solid 1px #fff;
+    list-style-type:none;
+    margin:60px;
+    display:inline-block;
+    text-align:left;
+}
+
+.index-social a{
+    color:#fff;
+    font-size:25px;
+    display:block;
+    float:left;
+    padding:10px;
+
+}
+.index-link h3{
+
+   color:#f1f1f1;
+   text-align:left;
+   
+}
+
+.index-link{
+    background-color:#000;
+}
+.index-link ul li{
+    padding:0px;
+    text-align:center;
+}
+.index-link ul li{
+    list-style-type:none;
+    text-align:left;
+}
+.index-link ul li a{
+  text-decoration:none;
+  font-size:16px;
+  color:#fff;
+  display:block;
+  padding:5px 0;
+  text-align:left;
+}
+.index-link ul li a:hover{
+     text-decoration:underline;
+}
+.copy-c{
+    padding-top:15px;
+}
+
+
+
+#contact{
+    
+    font-family: 'Teko', sans-serif;
+  padding-top: 60px;
+  width: 100%;
+  width: 100vw;
+  height: 550px;
+  background: #3a6186; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color : #fff;    
+}
+.contact-section{
+  padding-top: 40px;
+}
+.contact-section .col-md-6{
+  width: 50%;
+}
+
+.form-line{
+  border-right: 1px solid #B29999;
+}
+
+.form-group{
+  margin-top: 10px;
+}
+label{
+  font-size: 1.3em;
+  line-height: 1em;
+  font-weight: normal;
+}
+.form-control{
+  font-size: 1.3em;
+  color: #080808;
+}
+
+
+.submit{
+  font-size: 1.1em;
+  float: right;
+  width: 150px;
+  background-color: transparent;
+  color: #fff;
+
+}
